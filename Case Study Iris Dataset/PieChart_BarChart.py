@@ -15,4 +15,4 @@ axes[1].set_xlabel('Subject')
 axes[1].set_ylabel('Marks')
 
 plt.tight_layout()
-plt.show()
+plt.show() 

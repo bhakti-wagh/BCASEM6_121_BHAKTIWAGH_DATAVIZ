@@ -1,12 +1,13 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('iris.csv')
-species = df['class'].unique()
+df = pd.read_csv('Case Study Iris Dataset/iris.csv')
+species_count = df['species'].unique()
+
 colors = ['blue', 'orange', 'green']
 
-for sp, col in zip(species, colors):
-    subset = df[df['class'] == sp]
+for sp, col in zip(species_count, colors):
+    subset = df[df['species'] == sp]
     plt.scatter(subset['petal_length'], subset['petal_width'],
                 label=sp, color=col, alpha=0.7)
 
