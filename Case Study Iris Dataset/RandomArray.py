@@ -1,29 +1,42 @@
+#generate random array and display using different charts
+
 import numpy as np
 import matplotlib.pyplot as plt
 
-np.random.seed(42)
+# Generate random array of 50 integers
 data = np.random.randint(1, 100, 50)
 
-fig, axes = plt.subplots(2, 2, figsize=(12, 8))
+# -----------------------------
+# Line Chart
+# -----------------------------
+plt.plot(data, color='blue', marker='o', linestyle='-')
+plt.title("Line Chart of Random Data")
+plt.xlabel("Index")
+plt.ylabel("Values")
+plt.grid(True)
+plt.show()
 
-axes[0,0].plot(data, color='blue')
-axes[0,0].set_title('Line Chart')
-axes[0,0].set_xlabel('Index')
-axes[0,0].set_ylabel('Value')
+# -----------------------------
+# Scatter Plot
+# -----------------------------
+plt.scatter(range(50), data, color='red')
+plt.title("Scatter Plot of Random Data")
+plt.xlabel("Index")
+plt.ylabel("Values")
+plt.show()
 
-axes[0,1].scatter(range(50), data, color='red')
-axes[0,1].set_title('Scatter Plot')
-axes[0,1].set_xlabel('Index')
-axes[0,1].set_ylabel('Value')
+# -----------------------------
+# Histogram
+# -----------------------------
+plt.hist(data, bins=10, color='green')
+plt.title("Histogram of Random Data")
+plt.xlabel("Value Range")
+plt.ylabel("Frequency")
+plt.show()
 
-axes[1,0].hist(data, bins=10, color='green', edgecolor='black')
-axes[1,0].set_title('Histogram')
-axes[1,0].set_xlabel('Value')
-axes[1,0].set_ylabel('Frequency')
-
-axes[1,1].boxplot(data)
-axes[1,1].set_title('Box Plot')
-axes[1,1].set_ylabel('Value')
-
-plt.tight_layout()
+# -----------------------------
+# Box Plot
+# -----------------------------
+plt.boxplot(data)
+plt.title("Box Plot of Random Data")
 plt.show()
